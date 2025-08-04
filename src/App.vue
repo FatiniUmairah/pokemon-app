@@ -1,26 +1,37 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="background">
+    <router-view />
+  </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+<script setup>
+// No script needed here unless you add a layout later
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
+
+/* Fullscreen GIF background */
+.background {
+  background-image: url('bg.gif'); /* from public folder */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+@font-face {
+  font-family: 'PokemonSolid';
+  src: url('@/assets/fonts/pokemon/Pokemon Solid.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'PokemonHollow';
+  src: url('@/assets/fonts/pokemon/Pokemon Hollow.ttf') format('truetype');
+}
+
 </style>
